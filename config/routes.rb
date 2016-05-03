@@ -9,7 +9,8 @@ Rails.application.routes.draw do
 
   # get 'sessions/new'
 
-  root      'sessions#new'
+  # root      'sessions#new'
+  root :to => "forem/forums#index"
   get       'static_pages/home'
   get       'static_pages/help'
   get       'static_pages/about'
