@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   get       'static_pages/about'
   get       'static_pages/about'
   get       'signup'  => 'users#new'
+  get       '/signin',  to: 'sessions#new', :as => :new_user_session
   get       'login'   => 'sessions#new'
   post      'login'   => 'sessions#create'
   delete    'logout'  => 'sessions#destroy'
