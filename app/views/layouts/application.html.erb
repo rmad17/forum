@@ -6,10 +6,14 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <%= render 'layouts/shim' %>
-  <%= forem_atom_auto_discovery_link_tag %>
 </head>
 <body>
     <%= render 'layouts/header' %>
+    <div class="container">
+      <% if logged_in? %>
+        <%= link_to "Profile", main_app.user_path(current_user) %>
+      <% end %>
+    </div>
     <div class="container">
         <% flash.each do |message_type, message| %>
           <div class="alert alert-<%= message_type %>"><%= message %></div>

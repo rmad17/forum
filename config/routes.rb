@@ -5,17 +5,17 @@ Rails.application.routes.draw do
   # If you would like to change where this extension is mounted, simply change the :at option to something different.
   #
   # We ask that you don't use the :as option here, as Forem relies on it being the default of "forem"
-  mount Forem::Engine, :at => '/'
+  mount Forem::Engine, :at => '/forums'
   #root :to => "forem/forums#index"
   # get 'sessions/new'
-
-  # root      'sessions#new'
+  
+  root      'sessions#new'
   get       'static_pages/home'
   get       'static_pages/help'
   get       'static_pages/about'
   get       'static_pages/about'
   get       'signup'  => 'users#new'
-  get       '/signin',  to: 'sessions#new', :as => :new_user_session
+  get       '/login',  to: 'sessions#new', :as => :new_user_session
   get       'login'   => 'sessions#new'
   post      'login'   => 'sessions#create'
   delete    'logout'  => 'sessions#destroy'

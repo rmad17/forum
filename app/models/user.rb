@@ -38,7 +38,7 @@ class User < ActiveRecord::Base
   end
 
   def forem_email
-    email_address
+    email_was
   end
 
 end

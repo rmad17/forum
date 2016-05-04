@@ -21,6 +21,7 @@ module SessionsHelper
       user = User.find_by(id: user_id)
       if user && user.authenticated?(cookies[:remember_token])
         log_in user
+        redirect_to forem.root_path
         @current_user = user
       end
     end
