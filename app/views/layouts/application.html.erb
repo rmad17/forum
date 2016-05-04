@@ -10,11 +10,6 @@
 <body>
     <%= render 'layouts/header' %>
     <div class="container">
-      <% if logged_in? %>
-        <%= link_to "Profile", main_app.user_path(current_user) %>
-      <% end %>
-    </div>
-    <div class="container">
         <% flash.each do |message_type, message| %>
           <div class="alert alert-<%= message_type %>"><%= message %></div>
         <% end %>
